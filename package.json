@@ -1,6 +1,6 @@
 {
   "name": "model-convert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "helps you convert your non-unified models from various sources into a single model you can use",
   "main": "index.js",
   "scripts": {
