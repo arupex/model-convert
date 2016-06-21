@@ -1,0 +1,37 @@
+{
+  "name": "model-convert",
+  "version": "1.0.0",
+  "description": "helps you convert your non-unified models from various sources into a single model you can use",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arupex/model-convert.git"
+  },
+  "keywords": [
+    "model",
+    "convert",
+    "conversion",
+    "converter",
+    "schema"
+  ],
+  "author": "dirwin517",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/arupex/model-convert/issues"
+  },
+  "homepage": "https://github.com/arupex/model-convert#readme",
+  "dependencies": {
+    "deep-setter": "^1.0.1",
+    "deep-value": "^1.0.1",
+    "model-detect": "^1.0.1"
+  },
+  "devDependencies": {
+    "assert-diff": "^1.0.1",
+    "mocha": "^2.5.3"
+  }
+}
