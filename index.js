@@ -28,11 +28,23 @@ function arupex_model_convert(versionAttributes){
         var isVersion = detector(model);
 
         var newModel = {};
-        var versionAttribute = versionAttributes[isVersion];
-        Object.keys(versionAttribute).forEach(function(originKey){
-            arupex_deep_setter(newModel,versionAttribute[originKey],arupex_deep_value(model, originKey));
-        });
 
+        if(isVersion === 'vNull') {
+            Object.keys(versionAttributes).forEach(function(version){
+                var versionAttribute = versionAttributes[version];
+                Object.keys(versionAttribute).forEach(function(originKey){
+                    if(!arupex_deep_value(newModel, versionAttribute[originKey]) && arupex_deep_value(model, originKey)) {
+                        arupex_deep_setter(newModel,versionAttribute[originKey], arupex_deep_value(model, originKey));
+                    }
+                });
+            });
+        }
+        else {
+            var versionAttribute = versionAttributes[isVersion];
+            Object.keys(versionAttribute).forEach(function (originKey) {
+                arupex_deep_setter(newModel, versionAttribute[originKey], arupex_deep_value(model, originKey));
+            });
+        }
         return newModel;
     };
 }
